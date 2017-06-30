@@ -19,9 +19,19 @@ $(document).ready(function() {
   var doctor = new Doctor();
   $('#doctor-search').submit(function(event) {
     event.preventDefault();
+    $('#results').show();
     var medicalIssue = $('#medical-issue').val();
     // $('#location').val("");
-    doctor.getDoctors(medicalIssue, displayDoctors);
     $('#show-doctors').empty();
+    $('#show-doctor-info').empty();
+    doctor.getDoctors(medicalIssue, displayDoctors);
   });
 });
+
+var addClick = function(npi) {
+  var doctor = new Doctor();
+  $('.doctor-info').click(function() {
+    npi = $(this[0].npi);
+    doctor.getDoctorInfo(npi, displayDoctorInfo);
+  });
+};
