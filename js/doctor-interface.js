@@ -2,12 +2,12 @@ var Doctor = require('./../js/doctor.js').doctorModule;
 
 var displayDoctors = function(foundDoctors) {
   foundDoctors.forEach(function(doctor) {
-    $('#show-doctors').append('<li class="doctor-info" npi=' + doctor.npi +'>' + doctor.firstName + ' ' + doctor.lastName + ', ' + doctor.title + '</li>');
+    $('#show-doctors').append('<li class="doctor-info" id=' + doctor.id + '>' + doctor.firstName + ' ' + doctor.lastName + ', ' + doctor.title + '</li>');
   });
-  addClick(npi);
+  addClick(id);
 };
 
-var displayDoctorInfo = function(firstName, lastName, title, gender, bio, currentPractice, phone, image, npi) {
+var displayDoctorInfo = function(firstName, lastName, title, gender, bio, currentPractice, phone, image) {
     $('#show-doctor-info').append('<img src="' + image + '"><br>');
     $('#show-doctor-info').append('<h2>' + firstName + ' ' + lastName + ', ' + title + '</h2><hr>');
     $('#show-doctor-info').append('<h4><strong>' + gender + '</strong></h4>');
@@ -16,10 +16,10 @@ var displayDoctorInfo = function(firstName, lastName, title, gender, bio, curren
 };
 
 $(document).ready(function() {
-  var doctor = new Doctor();
-  $('#doctor-search').submit(function(event) {
-    event.preventDefault();
+  $('#doctor-search').click(function() {
+    var doctor = new Doctor();
     $('#results').show();
+    $('#show-doctors').show();
     var medicalIssue = $('#medical-issue').val();
     // $('#location').val("");
     $('#show-doctors').empty();
@@ -28,12 +28,15 @@ $(document).ready(function() {
   });
 });
 
-var addClick = function(npi) {
-  var doctor = new Doctor();
+var addClick = function(id) {
+  var selectedDoctor = new Doctor();
+  // console.log(selectedDoctor[0]);
   $('.doctor-info').click(function() {
-    // console.log("before: "+npi);
-    // npi = $((this)[0].npi);
-    // console.log("after: "+npi);
-    doctor.getDoctorInfo(npi, displayDoctorInfo);
+    // $('#show-doctors').hide();
+    $('#show-doctor-info').show();
+    $('#show-doctor-info').empty();
+    // console.log("after: "+(this)[0].id);
+    id = $(this)[0].id;
+    selectedDoctor.getDoctorInfo(id, displayDoctorInfo);
   });
 };
