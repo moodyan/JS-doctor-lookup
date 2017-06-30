@@ -47,11 +47,13 @@ _If you run into any issues or have questions, ideas or concerns, please contact
 
 ## Technologies Used
 
-**Languages:** HTML, CSS, JavaScript
+**Languages:** HTML, CSS, SASS, JavaScript
 
 **Package Managers:** Gulp, Bower
 
-**Other:** SASS, jQuery, Bootstrap
+**Frameworks/Libraries:** jQuery, Bootstrap
+
+**API:** BetterDoctor
 
 ### License
 
