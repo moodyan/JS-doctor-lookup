@@ -9,6 +9,7 @@
     <title>Portland Doctor Lookup</title>
   </head>
   <body>
+
     <div class="jumbotron">
       <!-- <img src="/img/doctor.gif" alt="doctor"> -->
       <h1>Portland Doctor Lookup</h1>
@@ -16,17 +17,17 @@
     <div class="container">
       <form>
         <label for="medical-issue">Enter your medical issue:</label>
-        <input id="medical-issue" type="text">
-        <br>
+        <input id="medical-issue" type="text" placeholder="e.g. 'sore throat' or 'acne'">
+        <br><br>
         <!-- <label for="location">Enter your location:</label>
         <input id="location" type="text">
         <br> -->
-        <button class="btn btn-lg btn-primary" type="button" id="doctor-search">Find a Doctor Nearby!</button>
+        <button class="btn btn-lg" type="button" id="doctor-search">Find a Doctor Nearby!</button>
       </form>
       <hr>
       <div id="results">
+        <h2 id="result-click">RESULTS</h2>
         <div id="show-doctors">
-
         </div>
         <div id="show-doctor-info">
 

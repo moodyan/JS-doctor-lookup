@@ -1,3 +1,43 @@
 #results {
   display: none;
 }
+input {
+  width: 300px;
+  height: 50px;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+}
+
+body {
+  background-color: #073642;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+label {
+  font-size: 25px;
+  color: white;
+}
+
+
+.jumbotron {
+  background-color: #586e75;
+  color: white;
+  text-align: center;
+}
+
+button {
+  color: black;
+  background-color: #586e75;
+}
+
+button:hover {
+  background-color: white;
+}
+
+li:hover {
+  font-weight: bold;
+}

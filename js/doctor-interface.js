@@ -24,7 +24,6 @@ $(document).ready(function() {
     var medicalIssue = $('#medical-issue').val();
     // $('#location').val("");
     $('#show-doctors').empty();
-    $('#show-doctor-info').empty();
     doctor.getDoctors(medicalIssue, displayDoctors);
   });
 });
@@ -33,9 +32,11 @@ var addClick = function(id) {
   var selectedDoctor = new Doctor();
   // console.log(selectedDoctor[0]);
   $('.doctor-info').click(function() {
-    // $('#show-doctors').hide();
-    $('#show-doctor-info').show();
     $('#show-doctor-info').empty();
+    $('#show-doctor-info').show();
+    
+    // $('#show-doctors').hide();
+    // $('#results').show();
     // console.log("after: "+(this)[0].id);
     id = $(this)[0].id;
     selectedDoctor.getDoctorInfo(id, displayDoctorInfo);
