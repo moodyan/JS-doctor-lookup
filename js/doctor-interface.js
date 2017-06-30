@@ -2,15 +2,16 @@ var Doctor = require('./../js/doctor.js').doctorModule;
 
 var displayDoctors = function(foundDoctors) {
   foundDoctors.forEach(function(doctor) {
-    $('#show-doctors').append('<li class="doctor-info" id=' + doctor.id + '>' + doctor.firstName + ' ' + doctor.lastName + ', ' + doctor.title + '</li>');
+    $('#show-doctors').append('<li class="doctor-info" id=' + doctor.id + '>' + doctor.firstName + ' ' + doctor.lastName + ', ' + doctor.title + ' (' + doctor.specialty + ')</li>');
   });
   addClick(id);
 };
 
-var displayDoctorInfo = function(firstName, lastName, title, gender, bio, currentPractice, phone, image) {
+var displayDoctorInfo = function(firstName, lastName, title, bio, currentPractice, phone, image, specialty, specialtyDescription) {
     $('#show-doctor-info').append('<img src="' + image + '"><br>');
-    $('#show-doctor-info').append('<h2>' + firstName + ' ' + lastName + ', ' + title + '</h2><hr>');
-    $('#show-doctor-info').append('<h4><strong>' + gender + '</strong></h4>');
+    $('#show-doctor-info').append('<h2>' + firstName + ' ' + lastName + ', ' + title + '</h2>');
+    $('#show-doctor-info').append('<h4><strong>Specialty: ' + specialty + '</strong></h4>');
+    $('#show-doctor-info').append('<h4>' + specialtyDescription + '</h4><hr>');
     $('#show-doctor-info').append('<h3> Current Practice: </h3><h4>' + currentPractice + '</h4><h3>Phone: </h3><h4>' + phone + '</h4>');
     $('#show-doctor-info').append('<p>' + bio + '</p>');
 };
