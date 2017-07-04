@@ -32,6 +32,7 @@ In the terminal, cd into the project folder. Enter the following commands:
 | npm |$ npm install |
 | bower |$ bower install |
 
+Enter the command > **gulp build**
 Enter the command > **gulp serve**
 
 _This serve command should automatically navigate you to http://localhost:3000/ and you will see the application._

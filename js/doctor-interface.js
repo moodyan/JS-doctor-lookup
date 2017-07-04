@@ -1,6 +1,9 @@
 var Doctor = require('./../js/doctor.js').doctorModule;
 
 var displayDoctors = function(foundDoctors) {
+  if (foundDoctors.length === 0) {
+    $('#show-doctors').append("Sorry, there are 0 doctors found in the Portland area with the specialty you are searching for.");
+  }
   foundDoctors.forEach(function(doctor) {
     $('#show-doctors').append('<li class="doctor-info" id=' + doctor.id + '>' + doctor.firstName + ' ' + doctor.lastName + ', ' + doctor.title + ' (' + doctor.specialty + ')</li>');
   });
